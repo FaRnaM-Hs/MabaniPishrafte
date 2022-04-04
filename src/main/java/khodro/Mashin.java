@@ -1,6 +1,6 @@
 package khodro;
 
-public class Mashin extends Khodro {
+public class Mashin extends Khodro implements SandughDar, Gearbox {
 
     boolean ayaDarBazAst;
     String mark;
@@ -29,5 +29,15 @@ public class Mashin extends Khodro {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public String typeDande() {
+        return "AutoMatic";
+    }
+
+    @Override
+    public int gonjayeshSandughDar() {
+        return 100;
     }
 }
