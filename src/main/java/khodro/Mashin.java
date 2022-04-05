@@ -4,6 +4,8 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
 
     boolean ayaDarBazAst;
     String mark;
+    int gonjayeshSandugh;
+    String noeDande;
     Ranande ranande;
 
 
@@ -12,7 +14,14 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
     }
 
     public Mashin(String mark) {
+
         this.mark = mark;
+    }
+
+    public Mashin(String mark, int gonjayesheSandugh, String noeDande) {
+        this.mark = mark;
+        this.gonjayeshSandugh = gonjayesheSandugh;
+        this.noeDande = noeDande;
     }
 
 
@@ -32,12 +41,17 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
     }
 
     @Override
+    public String getMark() {
+        return this.mark;
+    }
+
+    @Override
     public String typeDande() {
         return "AutoMatic";
     }
 
     @Override
-    public int gonjayeshSandughDar() {
+    public int gonjayeshSandugh() {
         return 100;
     }
 }
