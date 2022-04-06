@@ -1,12 +1,17 @@
-package khodro;
+package khodro.jadid;
+
+import khodro.Gearbox;
+import khodro.Khodro;
+import khodro.Ranande;
+import khodro.SandughDar;
 
 public class Mashin extends Khodro implements SandughDar, Gearbox {
 
-    boolean ayaDarBazAst;
-    String mark;
-    int gonjayeshSandugh;
-    String noeDande;
-    Ranande ranande;
+    private boolean ayaDarBazAst;
+    private String mark;
+    private int gonjayeshSandugh;
+    private String noeDande;
+    private Ranande ranande;
 
 
     public Mashin() {
@@ -33,6 +38,7 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
     }
 
     public boolean ayaDarHaleHarekatAst() {
+        protectedMethod();
         if (!ayaDarBazAst && ayaRoshanAst) {
             return true;
         } else {

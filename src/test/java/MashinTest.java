@@ -1,5 +1,5 @@
 import khodro.Khodro;
-import khodro.Mashin;
+import khodro.jadid.Mashin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
