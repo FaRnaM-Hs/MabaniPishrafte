@@ -7,6 +7,8 @@ import khodro.SandughDar;
 
 public class Mashin extends Khodro implements SandughDar, Gearbox {
 
+    public static int tedadeForush;
+
     private boolean ayaDarBazAst;
     private String mark;
     private int gonjayeshSandugh;
