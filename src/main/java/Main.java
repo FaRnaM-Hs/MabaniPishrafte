@@ -1,4 +1,5 @@
 import khodro.jadid.Mashin;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,6 +22,16 @@ public class Main {
         }
 
         System.out.println(mashin.getMark());
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Esme shoma chi hast?");
+        String nam = scanner.nextLine();
+        System.out.println("Lotfan senne khod ra vared konid:");
+        String sen = scanner.nextLine();
+        System.out.println("Dar che shahri zendegi mikonid?");
+        String shahreMahaleSokunat = scanner.nextLine();
+
+        System.out.println("Man " + nam + " hastam " + sen + " sale az " + shahreMahaleSokunat + ".");
 
         System.out.println("Payane Ejra");
     }
