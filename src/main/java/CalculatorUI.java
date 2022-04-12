@@ -15,30 +15,30 @@ public class CalculatorUI {
         cancel.setBounds(150, 0, 50, 50);
         cancel.addActionListener(event -> result.setText(""));
 
-        JButton one = getjButton("1", 0, 50);
-        JButton two = getjButton("2", 50, 50);
-        JButton three = getjButton("3", 100, 50);
+        JButton one = getButton("1", 0, 50);
+        JButton two = getButton("2", 50, 50);
+        JButton three = getButton("3", 100, 50);
 
         JButton plus = new JButton("+");
         plus.setBounds(150, 50, 50, 50);
 
-        JButton four = getjButton("4", 0, 100);
-        JButton five = getjButton("5", 50, 100);
-        JButton six = getjButton("6", 100, 100);
+        JButton four = getButton("4", 0, 100);
+        JButton five = getButton("5", 50, 100);
+        JButton six = getButton("6", 100, 100);
 
         JButton minus = new JButton("-");
         minus.setBounds(150, 100, 50, 50);
 
-        JButton seven = getjButton("7", 0, 150);
-        JButton eight = getjButton("8", 50, 150);
-        JButton nine = getjButton("9", 100, 150);
+        JButton seven = getButton("7", 0, 150);
+        JButton eight = getButton("8", 50, 150);
+        JButton nine = getButton("9", 100, 150);
 
         JButton multiply = new JButton("x");
         multiply.setBounds(150, 150, 50, 50);
 
-        JButton point = getjButton(".", 0, 200);
+        JButton point = getButton(".", 0, 200);
 
-        JButton zero = getjButton("0", 50, 200);
+        JButton zero = getButton("0", 50, 200);
 
         JButton equal = new JButton("=");
         equal.setBounds(100, 200, 50, 50);
