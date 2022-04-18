@@ -4,6 +4,9 @@ import javax.swing.*;
 
 public class CalculatorUI {
 
+    private static final int WIDTH = 45;
+    private static final int HEIGHT = 45;
+
     private static JTextField jTextField;
     private static String adadAval;
     private static String operator = null;
@@ -19,7 +22,7 @@ public class CalculatorUI {
 
 
         jTextField = new JTextField();
-        jTextField.setBounds(0,0, 150, 50);
+        jTextField.setBounds(0,0, 145, HEIGHT);
         jTextField.setEditable(false);
         mashinHesab.add(jTextField);
 
@@ -39,7 +42,7 @@ public class CalculatorUI {
 
         // Point Button
         operatorButton[0] = new JButton(".");
-        operatorButton[0].setBounds(0, 200, 50, 50);
+        operatorButton[0].setBounds(0, 200, WIDTH, HEIGHT);
         operatorButton[0].addActionListener(e -> {
             if (jTextField.getText().contains("."));
             else if (jTextField.getText().isEmpty())
@@ -50,7 +53,7 @@ public class CalculatorUI {
 
         // Plus Button
         operatorButton[1] = new JButton("+");
-        operatorButton[1].setBounds(150, 50, 50, 50);
+        operatorButton[1].setBounds(150, 50, WIDTH, HEIGHT);
         operatorButton[1].addActionListener(e -> {
             operator = "+";
             adadAval = jTextField.getText();
@@ -59,7 +62,7 @@ public class CalculatorUI {
 
         // Minus Button
         operatorButton[2] = new JButton("-");
-        operatorButton[2].setBounds(150, 100, 50, 50);
+        operatorButton[2].setBounds(150, 100, WIDTH, HEIGHT);
         operatorButton[2].addActionListener(e -> {
             adadAval = jTextField.getText();
             jTextField.setText("");
@@ -68,7 +71,7 @@ public class CalculatorUI {
 
         // Multiply Button
         operatorButton[3] = new JButton("x");
-        operatorButton[3].setBounds(150, 150, 50, 50);
+        operatorButton[3].setBounds(150, 150, WIDTH, HEIGHT);
         operatorButton[3].addActionListener(e -> {
             adadAval = jTextField.getText();
             jTextField.setText("");
@@ -77,7 +80,7 @@ public class CalculatorUI {
 
         // Division Button
         operatorButton[4] = new JButton("/");
-        operatorButton[4].setBounds(150, 200, 50, 50);
+        operatorButton[4].setBounds(150, 200, WIDTH, HEIGHT);
         operatorButton[4].addActionListener(e -> {
             adadAval = jTextField.getText();
             jTextField.setText("");
@@ -86,14 +89,14 @@ public class CalculatorUI {
 
         // Equal Button
         operatorButton[5] = new JButton("=");
-        operatorButton[5].setBounds(100, 200, 50, 50);
+        operatorButton[5].setBounds(100, 200, WIDTH, HEIGHT);
         operatorButton[5].addActionListener(e -> {
             equalOperation(operator);
         });
 
         // Clear/Cancel Button
         operatorButton[6] = new JButton("C");
-        operatorButton[6].setBounds(150, 0, 50, 50);
+        operatorButton[6].setBounds(150, 0, WIDTH, HEIGHT);
         operatorButton[6].addActionListener(event -> {
             jTextField.setText("");
             op = 0;
@@ -113,7 +116,7 @@ public class CalculatorUI {
 
     private static JButton getButton(String label, int xPosition, int yPosition) {
         JButton button = new JButton(label);
-        button.setBounds(xPosition, yPosition, 50, 50);
+        button.setBounds(xPosition, yPosition, WIDTH, HEIGHT);
         button.addActionListener(event -> {
             if (op == 1) {
                 if (!jTextField.getText().equals("0.")) {
@@ -135,7 +138,7 @@ public class CalculatorUI {
         if (operator == null) {
             jTextField.setText(jTextField.getText());
         } else {
-            Calculator calculator = new Calculator();
+            final Calculator calculator = new Calculator();
             String result;
             switch (operator) {
                 case "+":
