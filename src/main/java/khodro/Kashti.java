@@ -31,4 +31,17 @@ public class Kashti extends Khodro {
     public void printReferenceObject(Object object) {
         System.out.println(object);
     }
+
+    public void printReferenceObject(String object) {
+        System.out.println(object);
+    }
+
+    public void printReferenceObject(String object, int newParam) {
+        System.out.println(object);
+    }
+
+    // Kar nemikonad
+//    public String printReferenceObject(String object, int newParam) {
+//        return "";
+//    }
 }
