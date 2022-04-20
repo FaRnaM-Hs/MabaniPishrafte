@@ -23,4 +23,12 @@ public class Kashti extends Khodro {
     public String getMark() {
         return "Kashti";
     }
+
+    public void printReference() {
+        System.out.println(this.toString());
+    }
+
+    public void printReferenceObject(Object object) {
+        System.out.println(object);
+    }
 }
