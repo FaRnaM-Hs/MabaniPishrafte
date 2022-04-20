@@ -10,4 +10,11 @@ public class KhashtiTest {
 
         kashti.ayaDarHaleHarekatAst();
     }
+
+    @Test
+    void super_keyword() {
+        Khodro kashti = new Kashti();
+
+        System.out.println(kashti.toString());
+    }
 }
