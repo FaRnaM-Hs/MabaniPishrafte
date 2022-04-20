@@ -3,6 +3,12 @@ package khodro;
 public class Kashti extends Khodro {
 
     @Override
+    public String toString() {
+        //return "Kashti{}";
+        return super.toString();
+    }
+
+    @Override
     protected void protectedMethod() {
         System.out.println("We are in Kashti class");
     }
@@ -16,5 +22,13 @@ public class Kashti extends Khodro {
     @Override
     public String getMark() {
         return "Kashti";
+    }
+
+    public void printReference() {
+        System.out.println(this.toString());
+    }
+
+    public void printReferenceObject(Object object) {
+        System.out.println(object);
     }
 }

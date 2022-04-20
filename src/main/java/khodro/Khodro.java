@@ -2,6 +2,11 @@ package khodro;
 
 public abstract class Khodro {
 
+    @Override
+    public String toString() {
+        return "Khodro{}";
+    }
+
     protected void protectedMethod() {
         System.out.println("This method is protected");
     }
