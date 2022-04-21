@@ -1,4 +1,4 @@
-package khodro.jadid;
+package khodro.mashin;
 
 import khodro.Gearbox;
 import khodro.Khodro;
@@ -12,7 +12,7 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
     private boolean ayaDarBazAst;
     private String mark;
     private int gonjayeshSandugh;
-    private String noeDande;
+    private Dande noeDande;
     private Ranande ranande;
 
 
@@ -25,7 +25,7 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
         this.mark = mark;
     }
 
-    public Mashin(String mark, int gonjayesheSandugh, String noeDande) {
+    public Mashin(String mark, int gonjayesheSandugh, Dande noeDande) {
         this.mark = mark;
         this.gonjayeshSandugh = gonjayesheSandugh;
         this.noeDande = noeDande;
@@ -54,8 +54,8 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
     }
 
     @Override
-    public String typeDande() {
-        return "AutoMatic";
+    public Dande typeDande() {
+        return noeDande;
     }
 
     @Override
