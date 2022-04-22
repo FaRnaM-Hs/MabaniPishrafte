@@ -69,7 +69,7 @@ public class Mashin extends Khodro implements SandughDar, Gearbox {
                 "ayaDarBazAst=" + this.ayaDarBazAst +
                 ", mark='" + this.mark + '\'' +
                 ", gonjayeshSandugh=" + this.gonjayeshSandugh +
-                ", noeDande='" + this.noeDande + '\'' +
+                ", noeDande='" + this.noeDande.toPersian() + " - " + this.noeDande.toFrench() + '\'' +
                 ", ranande=" + this.ranande +
                 '}';
     }
