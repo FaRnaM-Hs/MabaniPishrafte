@@ -1,6 +1,6 @@
 package forushande;
 
-import khodro.jadid.Mashin;
+import khodro.mashin.Mashin;
 
 public class Forushande {
 

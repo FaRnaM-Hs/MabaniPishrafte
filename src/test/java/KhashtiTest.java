@@ -1,6 +1,7 @@
 import khodro.Kashti;
 import khodro.Khodro;
-import khodro.jadid.Mashin;
+import khodro.mashin.Dande;
+import khodro.mashin.Mashin;
 import org.junit.jupiter.api.Test;
 
 public class KhashtiTest {
@@ -22,7 +23,7 @@ public class KhashtiTest {
     @Test
     void this_keyword() {
         Kashti kashti = new Kashti();
-        Mashin mashin = new Mashin("Zhian", 25, "Manual");
+        Mashin mashin = new Mashin("Zhian", 25, Dande.MANUAL);
 
         kashti.printReference();
         kashti.printReferenceObject(this);
