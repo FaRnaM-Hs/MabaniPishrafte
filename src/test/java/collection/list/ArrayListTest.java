@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ArrayListTest {
@@ -17,8 +18,29 @@ public class ArrayListTest {
     }
 
     @Test
+    void Should_Sort_A_List() {
+        List<String> animals = new LinkedList<>();
+        animals.add("Dog");
+        animals.add("Cat");
+        animals.add("Cat");
+        animals.add("Cat");
+        animals.add("Rabbit");
+
+        Collections.sort(animals);
+
+        List<String> sortedAnimals = new LinkedList<>();
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Cat");
+        sortedAnimals.add("Dog");
+        sortedAnimals.add("Rabbit");
+
+        Assertions.assertThat(animals).isEqualTo(sortedAnimals);
+    }
+
+    @Test
     void Should_Be_Immutable() {
-        List<String> animals = new ArrayList<>();
+        List<String> animals = new LinkedList<>();
         animals.add("Dog");
         animals.add("Cat");
         animals.add("Cat");
@@ -35,7 +57,7 @@ public class ArrayListTest {
 
     @Test
     void Should_Reverse_A_List() {
-        List<String> animals = new ArrayList<>();
+        List<String> animals = new LinkedList<>();
         animals.add("Dog");
         animals.add("Cat");
         animals.add("Cat");
@@ -69,7 +91,7 @@ public class ArrayListTest {
         arrayListNumbers.remove(1);
         arrayListNumbers.add(111);
 
-        List<Integer> exceptedList = new ArrayList<>();
+        List<Integer> exceptedList = new LinkedList<>();
         exceptedList.add(1);
         //exceptedList.add(2);
         exceptedList.add(66);
@@ -83,11 +105,12 @@ public class ArrayListTest {
     class Converter {
 
         public List<Integer> convertToArrayList(int[] arrayNumbers) {
-            List<Integer> listNumbers = new ArrayList<>();
+            List<Integer> listNumbers = new LinkedList<>();
             for (int number : arrayNumbers) {
                 listNumbers.add(number);
             }
             return listNumbers;
         }
     }
+
 }
