@@ -35,7 +35,6 @@ public class MapTest {
         geometrics.put("Mostatil", "Zard");
         geometrics.put("Sheshzelei", "Sabz");
         geometrics.put("Moraba", "Ghermez");
-        geometrics.put("Moraba", "Ghermez");
 
         Set<Map.Entry<String, String>> entries = geometrics.entrySet();
         for (Map.Entry<String, String> entry : entries) {
