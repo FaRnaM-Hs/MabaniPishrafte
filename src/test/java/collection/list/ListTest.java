@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayListTest {
+public class ListTest {
 
     @Test
     void Should_Be_Empty_When_Created() {
