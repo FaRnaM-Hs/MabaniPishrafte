@@ -2,6 +2,7 @@ package compare;
 
 import khodro.mashin.Dande;
 import khodro.mashin.Mashin;
+import khodro.mashin.MashinComparator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -50,6 +51,29 @@ public class CompareCollectionsTest {
         expectedMashins.add(bmw_4);
         expectedMashins.add(bmw_2);
         expectedMashins.add(bmw_1);
+
+        Assertions.assertThat(mashins).isEqualTo(expectedMashins);
+    }
+
+    @Test
+    void Should_Sort_Mashins_By_Mark() {
+        Mashin bmw = new Mashin("BMW", 150, Dande.MANUAL);
+        Mashin mercedes = new Mashin("Mercedes", 100, Dande.AUTOMATIC);
+        Mashin paykan = new Mashin("Paykan", 50, Dande.MANUAL);
+        Mashin alfaRomeo = new Mashin("Alfa Romeo", 50, Dande.AUTOMATIC);
+        List<Mashin> mashins = new ArrayList<>();
+        mashins.add(bmw);
+        mashins.add(mercedes);
+        mashins.add(paykan);
+        mashins.add(alfaRomeo);
+
+        Collections.sort(mashins, new MashinComparator());
+
+        List<Mashin> expectedMashins = new ArrayList<>();
+        expectedMashins.add(alfaRomeo);
+        expectedMashins.add(bmw);
+        expectedMashins.add(mercedes);
+        expectedMashins.add(paykan);
 
         Assertions.assertThat(mashins).isEqualTo(expectedMashins);
     }
