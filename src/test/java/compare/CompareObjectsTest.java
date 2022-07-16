@@ -30,8 +30,7 @@ public class CompareObjectsTest {
         String far1 = "Farnam";
         String far2 = "Farnam";
 
-        Assertions.assertThat(far1 == far2);
-
+        Assertions.assertThat(far1 == far2).isTrue();
     }
 
     @Test

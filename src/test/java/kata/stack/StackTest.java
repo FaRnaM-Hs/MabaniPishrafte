@@ -36,10 +36,10 @@ public class StackTest {
     @Test
     void when_pushed_passed_limit_throw_stack_overflows_exception() {
         stack.push("A");
-        stack.push("A");
-        stack.push("A");
-        stack.push("A");
-        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        stack.push("D");
+        stack.push("E");
 
         Assertions.assertThatExceptionOfType(StackOverflowException.class).isThrownBy(() -> stack.push("A"));
     }
@@ -47,10 +47,10 @@ public class StackTest {
     @Test
     void when_popped_passed_limit_stack_underflows() {
         stack.push("A");
-        stack.push("A");
-        stack.push("A");
-        stack.push("A");
-        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        stack.push("D");
+        stack.push("E");
 
         stack.pop();
         stack.pop();
@@ -58,6 +58,42 @@ public class StackTest {
         stack.pop();
         stack.pop();
 
-        Assertions.assertThatExceptionOfType(StackOverflowException.class).isThrownBy(() -> stack.pop());
+        Assertions.assertThatExceptionOfType(StackUnderflowException.class).isThrownBy(() -> stack.pop());
     }
+
+    @Test
+    void when_two_values_are_pushed_then_one_is_popped_size_is_one() {
+        stack.push("A");
+        stack.push("B");
+
+        stack.pop();
+
+        Assertions.assertThat(stack.getSize()).isEqualTo(1);
+    }
+
+    @Test
+    void when_one_is_pushed_one_is_popped() {
+        stack.push("A");
+
+        stack.pop();
+
+        Assertions.assertThat(!stack.contains("A"));
+    }
+
+    @Test
+    void when_one_and_two_are_pushed_two_and_one_are_popped() {
+        stack.push("A");
+        stack.push("B");
+
+        stack.pop();
+        Assertions.assertThat(!stack.contains("B"));
+        stack.pop();
+        Assertions.assertThat(!stack.contains("A"));
+    }
+
+    @Test
+    void When_creating_stack_with_negative_size_should_through_IllegalCapacity() {
+        Assertions.assertThatExceptionOfType(IllegalCapacityException.class).isThrownBy(() -> new Stack(-1));
+    }
+
 }
