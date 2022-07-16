@@ -21,10 +21,10 @@ public class FileWriterTest {
 
             int read;
             StringBuilder helloWord = new StringBuilder();
-            while ((read = fileInputStream.read()) != - 1) {
+            while ((read = fileInputStream.read()) != -1) {
                 helloWord.append((char) read);
             }
-            
+
             Assertions.assertThat(helloWord.toString()).isEqualTo("Hello World");
         } catch (IOException e) {
             System.out.println("Unknown problem has occurred in text.txt!");

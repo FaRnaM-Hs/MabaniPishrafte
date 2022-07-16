@@ -8,6 +8,7 @@ public class Stack {
     private int limit;
 
     public Stack(int limit) {
+        if (limit < 0) throw new IllegalCapacityException("You cannot set negative size");
         this.limit = limit;
         this.elements = new LinkedList<>();
     }
@@ -25,8 +26,12 @@ public class Stack {
 
     public void pop() {
         if (elements.size() == 0) {
-            throw new StackOverflowException("There is no element to pop");
+            throw new StackUnderflowException("There is no element to pop");
         }
         elements.removeLast();
+    }
+
+    public boolean contains(String element) {
+        return elements.contains(element);
     }
 }
