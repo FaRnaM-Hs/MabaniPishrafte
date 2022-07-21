@@ -4,9 +4,14 @@ import java.util.List;
 
 public class ShoppingListServiceImpl implements ShoppingListService {
 
+    final ShoppingListDAO shoppingListDAO;
+
+    public ShoppingListServiceImpl(ShoppingListDAO shoppingListDAO) {
+        this.shoppingListDAO = shoppingListDAO;
+    }
+
     @Override
     public List<Item> findAllItems() {
-        final ShoppingListDAO shoppingListDAO = new ShoppingListDAOImpl();
         return shoppingListDAO.findAllItems();
     }
 
@@ -15,7 +20,6 @@ public class ShoppingListServiceImpl implements ShoppingListService {
         for (Item item : items)
             item.check();
 
-        final ShoppingListDAO shoppingListDAO = new ShoppingListDAOImpl();
         shoppingListDAO.saveItems(items);
     }
 }
