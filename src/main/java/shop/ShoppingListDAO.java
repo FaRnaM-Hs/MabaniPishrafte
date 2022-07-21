@@ -2,7 +2,7 @@ package shop;
 
 import java.util.List;
 
-public interface ShopListDAO {
+public interface ShoppingListDAO {
 
     List<Item> findAllItems();
 
