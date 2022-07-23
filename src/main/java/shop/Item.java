@@ -16,4 +16,17 @@ public class Item {
         if (quantity < 1 || quantity > 100)
             throw new ItemQuantityException();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name + ", Quantity: " + this.quantity + "\n";
+    }
 }

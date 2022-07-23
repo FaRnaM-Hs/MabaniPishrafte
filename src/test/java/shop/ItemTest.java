@@ -14,7 +14,7 @@ public class ItemTest {
 
     @BeforeEach
     void setUp() {
-        shoppingList = new ShoppingListServiceImpl(new ShoppingListDAOImpl());
+        shoppingList = new ShoppingListServiceImpl(new ShoppingListDAOImplDouble());
         itemList = new LinkedList<>();
     }
 
@@ -56,5 +56,18 @@ public class ItemTest {
         itemList.add(new Item("Orange", 101));
 
         Assertions.assertThrows(ItemQuantityException.class, () -> shoppingList.saveItems(itemList));
+    }
+
+    class ShoppingListDAOImplDouble implements ShoppingListDAO {
+
+        @Override
+        public List<Item> findAllItems() {
+            return null;
+        }
+
+        @Override
+        public void saveItems(List<Item> items) {
+
+        }
     }
 }

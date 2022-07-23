@@ -35,9 +35,12 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
     public void saveItems(List<Item> items) {
         try (final Connection con = DriverManager.getConnection(HOST, USER, PASS);
              final PreparedStatement insert = con.prepareStatement(INSERT_SQL)) {
-            insert.setString(1, "Orange");
-            insert.setInt(2, 5);
-            insert.executeUpdate();
+
+            for (Item item : items) {
+                insert.setString(1, item.getName());
+                insert.setInt(2, item.getQuantity());
+                insert.executeUpdate();
+            }
 
         } catch (SQLException e) {
             throw new MainSQLException(e);
