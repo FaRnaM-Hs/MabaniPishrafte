@@ -1,22 +1,39 @@
 package shop;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 public class ShoppingListDAOImpl implements ShoppingListDAO {
 
-    public static final String HOST = "jdbc:mysql://localhost:3306/shop";
-    public static final String USER = "root";
-    public static final String PASS = "1234";
     public static final String INSERT_SQL = "INSERT INTO item (name, quantity) VALUES (?, ?)";
     public static final String SELECT_SQL = "SELECT * FROM item";
+
+    private String host;
+    private String user;
+    private String pass;
+
+    public ShoppingListDAOImpl() {
+        try (InputStream configFile = new FileInputStream("db-config.properties")) {
+            Properties properties = new Properties();
+            properties.load(configFile);
+            host = properties.get("host").toString();
+            user = properties.get("username").toString();
+            pass = properties.get("password").toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public List<Item> findAllItems() {
         List<Item> items = new LinkedList<>();
 
-        try (final Connection con = DriverManager.getConnection(HOST, USER, PASS);
+        try (final Connection con = DriverManager.getConnection(host, user, pass);
              final PreparedStatement select = con.prepareStatement(SELECT_SQL)) {
             final ResultSet resultSet = select.executeQuery();
             while (resultSet.next()) {
@@ -33,7 +50,7 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
 
     @Override
     public void saveItems(List<Item> items) {
-        try (final Connection con = DriverManager.getConnection(HOST, USER, PASS);
+        try (final Connection con = DriverManager.getConnection(host, user, pass);
              final PreparedStatement insert = con.prepareStatement(INSERT_SQL)) {
 
             for (Item item : items) {
